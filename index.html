@@ -1,430 +1,251 @@
-
 <!DOCTYPE html>
-<html lang="he-IL" dir="rtl">
+
+<html>
+
+<html lang="iw" dir="rtl">
+<body style="text-align:center; margin:0 auto;">
+
 <head>
-	<meta charset="utf-8" />
-	<title>יצחק אפליקציות</title>
-	<meta name="description" content="בנית אפליקציות" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="format-detection" content="telephone=no" />
-	<link rel="shortcut icon" href="https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/storshkoof.png?raw=true"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<body style="text-align:center; margin:0 auto;">
-        <link href="https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/styles/style.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		
-	<div class="imgbox">
-    <img class="center-fit" src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/%D7%A8%D7%A7%D7%A2%20%D7%9C%D7%90%D7%AA%D7%A8%20%D7%90%D7%99%D7%A9%D7%99.png?raw=true'/>
-</div>
-		
-	  <div class="all">  
-	   
-<script language="JavaScript">
 
-var TRange=null;
-function findString (str) {
- if (parseInt(navigator.appVersion)<4) return;
- var strFound;
- if (window.find) {
-
-  // CODE FOR BROWSERS THAT SUPPORT window.find
-  strFound=self.find(str);
-  if (strFound && self.getSelection && !self.getSelection().anchorNode) {
-   strFound=self.find(str)
-  }
-  if (!strFound) {
-   strFound=self.find(str,0,1)
-   while (self.find(str,0,1)) continue
-  }
- }
- else if (navigator.appName.indexOf("Microsoft")!=-1) {
-
-  // EXPLORER-SPECIFIC CODE
-
-  if (TRange!=null) {
-   TRange.collapse(false)
-   strFound=TRange.findText(str)
-   if (strFound) TRange.select()
-  }
-  if (TRange==null || strFound==0) {
-   TRange=self.document.body.createTextRange()
-   strFound=TRange.findText(str)
-   if (strFound) TRange.select()
-  }
- }
- else if (navigator.appName=="Opera") {
-  alert ("Opera browsers not supported, sorry...")
-  return;
- }
- if (!strFound) alert ("String '"+str+"' not found!")
- return;
-}
-
-</script>
-		
 <style>
 
-div {
-   border: 2px solid red;
-   margin-top: 10px;
-   padding: 10px;
+html {
+
+  box-sizing: border-box;
+
+}
+
+
+
+*, *:before, *:after {
+
+  box-sizing: inherit;
+
+}
+
+
+
+.column {
+
+  float: left;
+
+  width: 33.3%;
+
+  margin-bottom: 16px;
+
+  padding: 0 8px;
+
+}
+
+
+
+@media screen and (max-width: 650px) {
+
+  .column {
+
+    width: 50%;
+
+    display: block;
+
   }
-  .all {
-   border-radius: 25px;
-  }	
-	
-.myButton {
-	background-color:#44c767;
-	border-radius:9px;
-	border:2px solid #18ab29;
+
+}
+
+
+
+.card {
+    
+    border-radius: 25px;
+  background: #edeaea;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.container {
+
+  padding: 0 16px;
+
+}
+
+
+
+.container::after, .row::after {
+
+  content: "";
+
+  clear: both;
+
+  display: table;
+
+}
+
+
+
+.title {
+
+  color: grey;
+
+}
+
+
+.B {
+	box-shadow: 0px 0px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	background-color:#33bdef;
+	border-radius:5px;
+	border:6px solid #057fd0;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:18px;
-	padding:6px 30px;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 15px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+	text-shadow:0px -1px 0px #5b6178;
 }
-.myButton:hover {
-	background-color:#5cbf2a;
+.B:hover {
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	background-color:#019ad2;
 }
-.myButton:active {
+.B:active {
 	position:relative;
 	top:1px;
 }
 
-* {
-            margin: 0;
-            padding: 0;
-        }
-        .imgbox {
-            display: grid;
-            height: 100%;
-        }
-        .center-fit {
-            max-width: 100%;
-            max-height: 100vh;
-            margin: auto;
-        }	
-	
-</style>		
-		
+        
+
+</style>
+
 </head>
 
-<h2>חנות אפליקציות כשרה</h2>
-
 <body>
-	<form name="f1" action="" 
-		onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
-		<input type="text" placeholder="חפשו אפליקציות..." name=t1 value="" style="background-color:rgb(254, 254, 255);color:rgb(2, 2, 2);width:150px;
-		height:24px;" >
-		<input type="submit" style="background-color:rgb(87, 85, 92);color:white;width:100px;
-height:30px;" value="לחפש">
-		<p> </p>
-	</form>
-	</body><br><br>
-
-<!--<img width=200px height=200px src="ICON/gboard.png">
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://softwares.center/media/android/meuhedet/org.meuhedet.android_2020-03-17.apk" class="myButton">מקלדת גוגל</a>
-	</a>
-	<br><br><br>-->
-
-
-<img width=200px height=200px src="ICON/מאוחדת.png">
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://softwares.center/media/android/meuhedet/org.meuhedet.android_2020-03-17.apk" class="myButton">קופ"ח מאוחדת</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src="ICON/Sarah.png">
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://madrichim.ovh/assets/uploads/files/com-mod-andro-search-files-contacts-mod-v2-85-unlocked.apk" class="myButton">חיפוש בפלאפון</a>
-	</a>
-	<br><br><br>
-
-
-
-<img width=200px height=200px src="ICON/icon2048.png">
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1659950828422-344ad130-b727-4ab3-b7ff-999c8c427681-2048.apk" class="myButton">משחק 2048</a>
-	</a>
-	<br><br><br>
-
-
-
-<img width=200px height=200px src="ICON/AirPods.png">
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1664697694012-yos-airbuds-popup-v2.8.220301-%D7%90%D7%99%D7%99%D7%A8%D7%A4%D7%95%D7%93%D7%A1.apk" class="myButton">AirPods אוזניות</a>
-	</a>
-	<br><br><br>
-
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/%D7%90%D7%95%D7%96%D7%A0%D7%99%D7%95%D7%AA%20%D7%98%D7%A8%D7%95%D7%A0%D7%A1%D7%9E%D7%90%D7%A8%D7%98.png?raw=true'/>
-
-    <br> <br>
-<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.geekbuy.tronsmart
-      <p><b>גודל קובץ:</b> 22 מ"ב
-      <p><b>מס' גירסה:</b> 4.1.0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1660661837276-tronsmart_4.1.0_apks.apk" class="myButton">אוזניות טרונסמארט </a>
-	</a>
-	<br><br><br>
-
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/%D7%9E%D7%A1%D7%A8%D7%99%D7%98%20%D7%9E%D7%A1%D7%9A.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1650450991104-%D7%9E%D7%A7%D7%9C%D7%99%D7%98-%D7%9E%D7%A1%D7%9A-adv.apk" class="myButton">מסריט מסך</a>
-	</a>
-	<br><br><br>
-
-
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/kooiaungerit.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה:</b> appinventor.ai_itiel_maimon.Rubiks_cube
-      <p><b>גודל קובץ:</b> 7.53 מ"ב
-      <p><b>מס' גירסה:</b> 2.9.7
-      <p><b>תאריך העלאה:</li></b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1658173990253-%D7%A4%D7%AA%D7%99%D7%A8%D7%AA-%D7%A7%D7%95%D7%91%D7%99%D7%94-%D7%94%D7%95%D7%A0%D7%92%D7%A8%D7%99%D7%AA.apk" class="myButton">פתרון לקוביה הונגרית</a>
-			</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/canone.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1651649838244-camera-connect-v2.7.30.20-%D7%97%D7%99%D7%91%D7%95%D7%A8-%D7%9C%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%A7%D7%A0%D7%95%D7%9F.apk" class="myButton">מצלמת קנון</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/gps_loker.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1650306894843-yos-gps-locker-prime-v2.4.1.apk" class="myButton">מתקן GPS</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/galeriagoogle.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1658739809621-gallery-google.apk" class="myButton">גלריה גוגל</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/chet.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1641505313530-%D7%91%D7%9C%D7%95%D7%98%D7%95%D7%A1-%D7%A6-x27-%D7%90%D7%98_4.9_mod.apk" class="myButton">בלוטות צ'אט</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/MUZIK144.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1660911574338-%D7%A9%D7%99%D7%93%D7%95%D7%A8%D7%99-%D7%9E%D7%95%D7%96%D7%99%D7%A7%D7%94_1.0.apk" class="myButton">מוזיקה אונליין</a>
-	</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/ptkim.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1654784038193-%D7%A4%D7%AA%D7%A7%D7%99%D7%9D-v-1.2.1.apk" class="myButton">פתקים</a>
-		</a>
-	<br><br><br>
-
-<img width=200px height=200px src='https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/zmenihiom.png?raw=true'/>
-
-
-	<br><br>
-	<details>
-    <summary>הצג/הסתר פרטים נוספים...</summary>
-    <ul>
-      <p><b>שם חבילה: </b> com.
-      <p><b>גודל קובץ:</b> 0 מ"ב
-      <p><b>מס' גירסה:</b> 0
-      <p><b>תאריך העלאה:</b> 21.08.2022
-    </ul>
-  </details>
-
-	<br>
-	<a href="https://mitmachim.top/assets/uploads/files/1649678733303-%D7%96%D7%9E%D7%A0%D7%99-%D7%94%D7%99%D7%95%D7%9D.apk" class="myButton">זמני היום</a>
-	</a>
-	<br><br><br>
-
-
-<a href="https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/%D7%9C%D7%95%D7%92%D7%95%20%D7%A8%D7%A7%D7%A2%20%D7%A9%D7%97%D7%95%D7%A8.png?raw=true">
-<img width=70px height=70px src="https://github.com/yitzhakapps/yitzhakapps.github.io/blob/main/ICON/logo.png?raw=true"/></a><br>
-
-נבנה ע"י יצחק א. ודוד ח.  2022 ©
-
-	<br>
+
+
+
+  <div class="column">
+
+    <div class="card">
+    
+   
+<br>
+
+      <img src="https://raw.githubusercontent.com/gdfrvjy/apsh5482/main/%D7%9B%D7%90%D7%9C.png" alt="תמונה" style="width:75%">
+
+      <div class="container">
+      
+        <h3>כאל</h3>
+
+        <p>עודכן בתאריך י"ז תשרי</p>
+
+
+<a href="#" class="B">הורדה</a>
+
+<br><br>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="column">
+
+    <div class="card">
+    
+   
+<br>
+
+      <img src="https://raw.githubusercontent.com/gdfrvjy/apsh5482/main/%D7%9B%D7%90%D7%9C.png" alt="תמונה" style="width:75%">
+
+      <div class="container">
+      
+        <h3>כאל</h3>
+
+        <p>עודכן בתאריך י"ז תשרי</p>
+
+
+<a href="#" class="B">הורדה</a>
+
+<br><br>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
 
- 
+  <div class="column">
 
+    <div class="card">
+    
+   
+<br>
+
+      <img src="https://raw.githubusercontent.com/gdfrvjy/apsh5482/main/%D7%9B%D7%90%D7%9C.png" alt="תמונה" style="width:75%">
+
+      <div class="container">
+      
+        <h3>כאל</h3>
+
+        <p>עודכן בתאריך י"ז תשרי</p>
+
+
+<a href="#" class="B">הורדה</a>
+
+<br><br>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="column">
+
+    <div class="card">
+    
+   
+<br>
+
+      <img src="https://raw.githubusercontent.com/gdfrvjy/apsh5482/main/%D7%9B%D7%90%D7%9C.png" alt="תמונה" style="width:75%">
+
+      <div class="container">
+      
+        <h3>כאל</h3>
+
+        <p>עודכן בתאריך י"ז תשרי</p>
+
+
+<a href="#" class="B">הורדה</a>
+
+<br><br>
+
+
+    </div>
+
+  </div>
+
+</div>
 
 </body>
+
 </html>
+
